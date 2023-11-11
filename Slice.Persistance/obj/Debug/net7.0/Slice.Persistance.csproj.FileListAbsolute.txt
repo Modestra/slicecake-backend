@@ -1,0 +1,17 @@
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Slice.Persistance.deps.json
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Slice.Persistance.runtimeconfig.json
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Slice.Persistance.dll
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Slice.Persistance.pdb
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Domain.dll
+D:\PetProjects\Slicecake-backend\Slice.Persistance\bin\Debug\net7.0\Domain.pdb
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.csproj.AssemblyReference.cache
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.AssemblyInfoInputs.cache
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.AssemblyInfo.cs
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.csproj.CoreCompileInputs.cache
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.csproj.CopyComplete
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.dll
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\refint\Slice.Persistance.dll
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.pdb
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\Slice.Persistance.genruntimeconfig.cache
+D:\PetProjects\Slicecake-backend\Slice.Persistance\obj\Debug\net7.0\ref\Slice.Persistance.dll
