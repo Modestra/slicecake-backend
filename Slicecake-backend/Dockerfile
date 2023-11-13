@@ -11,12 +11,13 @@ COPY ["Slice.Persistance/Slice.Persistance.csproj", "Slice.Persistance/"]
 RUN dotnet restore "Slicecake-backend/Slicecake-backend.csproj"
 COPY . .
 WORKDIR /src
-RUN dotnet build "Slicecake-backend.csproj" -c Release -o /app
+RUN dotnet build "Slicecake-backend/Slicecake-backend.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "Slicecake-backend.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Slicecake-backend/Slicecake-backend.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
+ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Slicecake-backend.dll"]
