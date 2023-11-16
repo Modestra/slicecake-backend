@@ -1,0 +1,14 @@
+version: "3.9"
+networks:
+  backend:
+    driver: bridge
+services: 
+  app:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: slicecake-backend/Dockerfile
+    ports:
+      - 5000:80
+    networks:
+      - backend
