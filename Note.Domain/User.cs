@@ -35,5 +35,5 @@ public class User
     /// <summary>
     /// Тип пользователя: Покупатель, продавец, администратор (скрытая)
     /// </summary>
-    public UserTypes Profeccion { get; set; }
+    public UserTypes Profession { get; set; }
 }
