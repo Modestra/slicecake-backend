@@ -14,15 +14,17 @@ public class User
     /// <summary>
     /// Почта
     /// </summary>
-    [Column]
+    [Required(AllowEmptyStrings = true, ErrorMessage = "Email пусто или некорректно")]
     public string Email { get; set; }
     /// <summary>
     /// Логин
     /// </summary>
+    [Required(AllowEmptyStrings = true, ErrorMessage = "Login пусто или некорректно")]
     public string Login { get; set; }
     /// <summary>
     /// Пароль
     /// </summary>
+    [Required(AllowEmptyStrings = true, ErrorMessage = "Password пусто или некорректно")]
     public string Password { get; set; }
     /// <summary>
     /// Возраст пользователя

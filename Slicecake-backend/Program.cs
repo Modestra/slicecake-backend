@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using Slice.Persistance;
 using Slicecake_backend;
 using Slicecake_backend.Controllers;
@@ -12,20 +13,17 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(s =>
+builder.Services.AddSwaggerGen(options =>
 {
-    var includeDocsTypesMarkers = new[]
+    options.SwaggerDoc("v1", new OpenApiInfo
     {
-        typeof(WeatherForecastController)
-    };
-    foreach (var marker in includeDocsTypesMarkers)
-    {
-        var xmlName = $"{marker.Assembly.GetName().Name}.xml";
-        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlName);
-            
-        if (File.Exists(xmlPath))
-            s.IncludeXmlComments(xmlPath);
-    }
+        Version = "0.0.1",
+        Title = "SliceCake API",
+        Description = "Backend для сервера"
+    });
+    var basePath = AppContext.BaseDirectory;
+    var xmlPath = Path.Combine(basePath, "Slicecake-backend.xml");
+    options.IncludeXmlComments(xmlPath);
 });
 
 var app = builder.Build();

@@ -6,7 +6,7 @@ namespace Slice.Persistance;
 public class Base : IEntityTypeConfiguration<Notes>
 {
     /// <summary>
-    /// Параметры для таблица в базе данных
+    /// Параметры для таблицы в базе данных
     /// </summary>
     /// <param name="builder"></param>
     public void Configure(EntityTypeBuilder<Notes> builder)

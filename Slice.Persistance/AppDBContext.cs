@@ -9,20 +9,13 @@ public class AppDBContext : DbContext
     {
         Database.EnsureCreated();
     }
+
     public DbSet<Notes> Note { get; set; }
-    
-    public DbSet<User> Users { get; set; }
-    
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-    }
+    public DbSet<User> User { get; set; }
+    public DbSet<ShortUserDto> ShortUser { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>(builder =>
-        {
-            builder.ToTable("Users").HasKey(id => id.id);
-        });
+        modelBuilder.Entity<User>(builder => { builder.ToTable("Users").HasKey(id => id.id); });
     }
 }

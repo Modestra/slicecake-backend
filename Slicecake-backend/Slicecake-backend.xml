@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Slicecake-backend</name>
+    </assembly>
+    <members>
+        <member name="M:Slicecake_backend.Controllers.NoteController.CreateNote">
+            <summary>
+            Создает карточку по модели
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.NoteController.Get(System.String)">
+            <summary>
+            Получить карточку через систему поиска
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.UserController.GetUser(Note.Domain.User)">
+            <summary>
+            Получить данные пользователя
+            </summary>
+            <param name="user">Пользователь</param>
+            <returns></returns>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.UserController.PostUser(Note.Domain.User)">
+            <summary>
+            Изменить данные пользователя
+            </summary>
+            <param name="user">Пользователь</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
