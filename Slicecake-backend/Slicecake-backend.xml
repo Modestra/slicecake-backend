@@ -4,6 +4,24 @@
         <name>Slicecake-backend</name>
     </assembly>
     <members>
+        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Login(System.String)">
+            <summary>
+            Авторизация пользователя
+            </summary>
+            <param name="value">Форма авторизации</param>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Register(System.String)">
+            <summary>
+            Регистрация пользователя
+            </summary>
+            <param name="value">Форма регистрации пользователя</param>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.NoteController.GetNotes">
+            <summary>
+            Получить все доступные карточки
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Slicecake_backend.Controllers.NoteController.CreateNote">
             <summary>
             Создает карточку по модели
@@ -14,21 +32,35 @@
             <summary>
             Получить карточку через систему поиска
             </summary>
-            <param name="id"></param>
+            <param name="name">Название карточки</param>
+            <returns></returns>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.NoteController.Delete(System.String)">
+            <summary>
+            Удаление выбранной карточки
+            </summary>
+            <param name="name"></param>
             <returns></returns>
         </member>
         <member name="M:Slicecake_backend.Controllers.UserController.GetUser(Note.Domain.User)">
             <summary>
             Получить данные пользователя
             </summary>
+            <param name="user">Тело пользователя</param>
+            <returns></returns>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.UserController.PutUser(Note.Domain.User)">
+            <summary>
+            Изменить данные пользователя по Id
+            </summary>
             <param name="user">Пользователь</param>
             <returns></returns>
         </member>
-        <member name="M:Slicecake_backend.Controllers.UserController.PostUser(Note.Domain.User)">
+        <member name="M:Slicecake_backend.Controllers.UserController.DeleteUser(Note.Domain.ShortUserDto)">
             <summary>
-            Изменить данные пользователя
+            Удалить пользователя по Id
             </summary>
-            <param name="user">Пользователь</param>
+            <param name="shortUser"></param>
             <returns></returns>
         </member>
     </members>

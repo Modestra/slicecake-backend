@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Note.Domain.Enums;
@@ -9,6 +10,7 @@ public class User
     /// <summary>
     /// Id пользователя
     /// </summary>
+    ///
     [Key]
     public Guid id { get; set; }
     /// <summary>
@@ -26,14 +28,16 @@ public class User
     /// </summary>
     [Required(AllowEmptyStrings = true, ErrorMessage = "Password пусто или некорректно")]
     public string Password { get; set; }
+
     /// <summary>
     /// Возраст пользователя
     /// </summary>
-    public int Age { get; set; }
+    public int Age { get; set; } = 0;
+
     /// <summary>
     /// Пол пользователя
     /// </summary>
-    public string Sex { get; set; }
+    public string Sex { get; set; } = "Male";
     /// <summary>
     /// Тип пользователя: Покупатель, продавец, администратор (скрытая)
     /// </summary>

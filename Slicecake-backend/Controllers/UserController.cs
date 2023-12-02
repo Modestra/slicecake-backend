@@ -14,22 +14,34 @@ namespace Slicecake_backend.Controllers
         /// <summary>
         /// Получить данные пользователя
         /// </summary>
-        /// <param name="user">Пользователь</param>
+        /// <param name="user">Тело пользователя</param>
         /// <returns></returns>
         [HttpPost("current")]
         public IActionResult GetUser(User user)
         {
             return Ok(user);
         }
+        
         /// <summary>
-        /// Изменить данные пользователя
+        /// Изменить данные пользователя по Id
         /// </summary>
         /// <param name="user">Пользователь</param>
         /// <returns></returns>
-        [HttpPost("post")]
-        public IActionResult PostUser(User user)
+        [HttpPut("{id}", Name = "Put")]
+        public IActionResult PutUser(User user)
         {
             return Ok(user);
+        }
+        
+        /// <summary>
+        /// Удалить пользователя по Id
+        /// </summary>
+        /// <param name="shortUser"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}", Name = "Delete")]
+        public IActionResult DeleteUser(ShortUserDto shortUser)
+        {
+            return Ok(shortUser);
         }
     }
 }

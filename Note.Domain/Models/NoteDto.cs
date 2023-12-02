@@ -2,6 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Note.Domain;
 
+/// <summary>
+/// Модель карточки 
+/// </summary>
 public class Notes
 {
     [Key]

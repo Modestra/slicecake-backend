@@ -12,12 +12,20 @@ namespace Slicecake_backend.Controllers
     public class AuthorizationController : ControllerBase
     {
         // POST: api/Authorization/Login
+        /// <summary>
+        /// Авторизация пользователя
+        /// </summary>
+        /// <param name="value">Форма авторизации</param>
         [HttpPost("Login")]
         public void Login([FromBody] string value)
         {
             
         }
         // POST: api/Authorization/Register
+        /// <summary>
+        /// Регистрация пользователя
+        /// </summary>
+        /// <param name="value">Форма регистрации пользователя</param>
         [HttpPost("Register")]
         public void Register([FromBody] string value)
         {
