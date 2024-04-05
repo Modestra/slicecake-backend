@@ -1,7 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Note.Domain;
 
 public class ShortUserDto
 {
+    /// <summary>
+    /// Id
+    /// </summary>
+    [Key]
+    public Guid Id { get; set; }
     /// <summary>
     /// Email
     /// </summary>

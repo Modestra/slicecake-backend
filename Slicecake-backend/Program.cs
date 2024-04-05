@@ -1,3 +1,4 @@
+using System.Configuration;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<AppDBContext>(options => 
-    options.UseNpgsql(builder.Configuration.GetConnectionString("BaseConnect")));
+    options.UseNpgsql("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=terrarik22"));
 builder.Services.AddControllers();
 
 //Авторизация
