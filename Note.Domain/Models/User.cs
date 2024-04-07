@@ -7,12 +7,13 @@ namespace Note.Domain;
 
 public class User
 {
+    private Guid _id;
     /// <summary>
     /// Id пользователя
     /// </summary>
     ///
     [Key]
-    public Guid id { get; set; }
+    public Guid id { get { return _id;} }
     /// <summary>
     /// Почта
     /// </summary>

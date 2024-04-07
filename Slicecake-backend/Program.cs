@@ -1,5 +1,7 @@
 using System.Configuration;
 using System.Text;
+using Domain.Repositories;
+using Domain.Repositories.IRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDBContext>(options => 
     options.UseNpgsql("Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=terrarik22"));
 builder.Services.AddControllers();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Авторизация
 builder.Services.AddAuthentication();

@@ -4,13 +4,18 @@
         <name>Slicecake-backend</name>
     </assembly>
     <members>
-        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Login(System.String)">
+        <member name="T:Slicecake_backend.Controllers.AuthorizationController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Login(Note.Domain.ShortUserDto)">
             <summary>
             Авторизация пользователя
             </summary>
             <param name="value">Форма авторизации</param>
         </member>
-        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Register(System.String)">
+        <member name="M:Slicecake_backend.Controllers.AuthorizationController.Register(Note.Domain.User)">
             <summary>
             Регистрация пользователя
             </summary>
