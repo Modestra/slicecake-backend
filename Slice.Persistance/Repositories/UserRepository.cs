@@ -17,7 +17,7 @@ public class UserRepository: IUserRepository
     public UserRepository(AppDBContext db)
     {
         _db = db;
-        secretKey = "SECRET STRING";
+        secretKey = "this is my custom Secret key for authentication";
     }
 
     public bool IsUniqueUser(string username)
@@ -47,7 +47,7 @@ public class UserRepository: IUserRepository
                 new Claim(ClaimTypes.Name, user.id.ToString())
             }),
             Expires = DateTime.UtcNow.AddDays(7),
-            SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
                 
         };
         var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -58,16 +58,12 @@ public class UserRepository: IUserRepository
         };
         return responceDto;
     }
-
-    public Task<User> Register(ShortUserDto shortUserDto)
-    {
-        throw new NotImplementedException();
-    }
-
+    
     public async Task<User> Register(User user)
     {
         User loginUser = new()
         {
+            Email = user.Email,
             Login = user.Login,
             Password = user.Password,
             Age = user.Age,

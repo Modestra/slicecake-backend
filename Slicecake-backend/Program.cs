@@ -20,17 +20,17 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Авторизация
 builder.Services.AddAuthentication();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(scheme =>
+    {
+        scheme.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        scheme.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidIssuer = AuthOptions.ISSUER,
-            ValidateAudience = true,
-            ValidAudience = AuthOptions.AUDIENCE,
-            ValidateLifetime = true,
-            IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("this is my custom Secret key for authentication")),
             ValidateIssuerSigningKey = true
         };
     });
@@ -48,6 +48,28 @@ builder.Services.AddSwaggerGen(options =>
     var basePath = AppContext.BaseDirectory;
     var xmlPath = Path.Combine(basePath, "Slicecake-backend.xml");
     options.IncludeXmlComments(xmlPath);
+    //Bearer авторизация
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Description = "Необходимый ключ",
+        Scheme = "Bearer",
+        In = ParameterLocation.Header
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference()
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new List<string>()
+        }
+    });
 });
 
 var app = builder.Build();
@@ -57,13 +79,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors(builder =>
-    {
-        builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-    });
 }
 
 //Авторизация
+app.UseAuthentication();
 app.UseAuthorization();
 
 //Показать контроллеры

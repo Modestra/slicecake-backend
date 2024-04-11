@@ -11,7 +11,6 @@ public class User
     /// <summary>
     /// Id пользователя
     /// </summary>
-    ///
     [Key]
     public Guid id { get { return _id;} }
     /// <summary>

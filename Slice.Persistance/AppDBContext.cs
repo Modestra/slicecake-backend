@@ -9,7 +9,6 @@ public class AppDBContext : DbContext
 {
     public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
     {
-        Database.EnsureDeleted();
         Database.EnsureCreated();
     }
     public DbSet<Notes> Note { get; set; }
@@ -22,6 +21,9 @@ public class AppDBContext : DbContext
             builder.HasNoKey();
             builder.ToTable("ShortUsers");
         });
-        modelBuilder.Entity<User>(builder => { builder.ToTable("Users").HasKey(id => id.id); });
+        modelBuilder.Entity<User>(builder =>
+        {
+            builder.ToTable("Users").HasKey(id => id.id);
+        });
     }
 }

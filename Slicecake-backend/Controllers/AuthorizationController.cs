@@ -41,10 +41,10 @@ namespace Slicecake_backend.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
-            var register = _userRep.Register(user);
+            var register = await _userRep.Register(user);
             if (register == null)
             {
-                return BadRequest(new {message = "Error"});
+                return BadRequest(new { message = "Error" });
             }
 
             return Ok(register);
