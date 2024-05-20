@@ -12,6 +12,7 @@ namespace Slicecake_backend.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class NoteController : ControllerBase
     {
         /// <summary>

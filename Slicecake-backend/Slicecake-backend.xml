@@ -47,9 +47,15 @@
             <param name="name"></param>
             <returns></returns>
         </member>
+        <member name="M:Slicecake_backend.Controllers.UserController.GetListUsers">
+            <summary>
+            Получение списка пользователей
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Slicecake_backend.Controllers.UserController.GetUser(Note.Domain.User)">
             <summary>
-            Получить данные пользователя
+            Получить данные пользователя по id
             </summary>
             <param name="user">Тело пользователя</param>
             <returns></returns>

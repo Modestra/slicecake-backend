@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Note.Domain;
 
@@ -12,7 +13,17 @@ namespace Slicecake_backend.Controllers
     public class UserController : Controller
     {
         /// <summary>
-        /// Получить данные пользователя
+        /// Получение списка пользователей
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        public IActionResult GetListUsers()
+        {
+            return Ok();
+        }
+        /// <summary>
+        /// Получить данные пользователя по id
         /// </summary>
         /// <param name="user">Тело пользователя</param>
         /// <returns></returns>
