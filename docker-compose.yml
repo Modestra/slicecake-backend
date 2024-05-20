@@ -1,8 +1,8 @@
-version: "3.9"
+version: "3.3"
 networks:
   backend:
     driver: bridge
-services: 
+services:
   app:
     container_name: backend
     build:
@@ -42,5 +42,5 @@ services:
 volumes:
   postgres-data:
   pgadmin:
-      
-    
+
+
