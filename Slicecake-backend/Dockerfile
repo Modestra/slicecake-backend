@@ -1,8 +1,8 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:latest AS base
 WORKDIR /app
 EXPOSE 5000
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:latest AS build
 ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /src
 COPY ["Slicecake-backend/Slicecake-backend.csproj", "Slicecake-backend/"]
